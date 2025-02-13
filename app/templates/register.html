@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('app_routes.home') }}">Inicio</a>
+        <a href="{{ url_for('app_routes.login') }}">Iniciar Sesión</a>
+    </nav>
+    <div class="container">
+        <h2>Registro</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <label>{{ form.username.label }}</label>
+            {{ form.username() }}
+            <label>{{ form.email.label }}</label>
+            {{ form.email() }}
+            <label>{{ form.password.label }}</label>
+            {{ form.password() }}
+            <label>{{ form.confirm_password.label }}</label>
+            {{ form.confirm_password() }}
+            {{ form.submit(class="btn") }}
+        </form>
+    </div>
+</body>
+</html>

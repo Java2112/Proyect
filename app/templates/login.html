@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('app_routes.home') }}">Inicio</a>
+        <a href="{{ url_for('app_routes.register') }}">Registrarse</a>
+    </nav>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.email.label }} {{ form.email() }}
+            {{ form.password.label }} {{ form.password() }}
+            {{ form.submit() }}
+        </form>
+    </div>
+</body>
+</html>
