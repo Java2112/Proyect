@@ -29,11 +29,9 @@
             {{ form.submit(class="btn") }}
         </form>
 
-        {% for file in pdf_files %}
-    <a href="{{ url_for('app_routes.download_pdf', filename=file) }}" class="btn">
-        Descargar {{ file }}
-    </a>
-{% endfor %}
+        <form action="{{ url_for('app_routes.download_reports') }}" method="get">
+            <button type="submit" class="btn btn-primary">Descargar Todos los PDFs</button>
+        </form>
 
     </div>
 </body>
